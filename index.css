@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #E6FDFF;
+    font-family: "Open Sans";
+}
+
+/*   СТИЛИ ДЛЯ ШАПКИ   */
+
+header {
+    color: #454545;
+    font-size: 1.875em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 86%;
+    background: white;
+    border-radius: 0 0 40px 40px;
+    margin-left: 7%;
+    padding: 15px 50px;
+}
+
+header .logo {
+    font-size: 1.25em;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    display: block;
+}
+
+.logo span {
+    color: #18B66A;
+}
+
+.header-buttons {
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    width: 47%;
+}
+
+.header-buttons__item:first-child {
+    background: -webkit-linear-gradient(90deg, rgb(24, 182, 106), rgb(87, 255, 0));
+    background: -moz-linear-gradient(90deg, rgb(24, 182, 106), rgb(87, 255, 0));
+    background: linear-gradient(90deg, rgb(24, 182, 106), rgb(87, 255, 0));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.header-buttons__item {
+    position: relative;
+    cursor: pointer;
+    line-height: 1;
+}
+
+a {
+    text-decoration: none;
+    color: #454545;
+}
+
+.header__dispose a {
+    color: white;
+}
+
+.header-buttons__item:after {
+    display: block;
+    position: absolute;
+    margin-top: 7px;
+    left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+    width: 0;/*задаём длинну линии до наведения курсора*/
+    height: 5px; /*задаём ширину линии*/
+    background: -webkit-linear-gradient(90deg, rgb(24, 182, 106), rgb(87, 255, 0));
+    background: -moz-linear-gradient(90deg, rgb(24, 182, 106), rgb(87, 255, 0));
+    background: linear-gradient(90deg, rgb(24, 182, 106), rgb(87, 255, 0));
+    content: "";
+    transition: width 0.3s ease-out; /*задаём время анимации*/
+}
+
+.header-buttons__item:hover:after,
+.header-buttons__item:focus:after {
+    width: 100%;
+}
+
+.header__dispose {
+    background: -webkit-linear-gradient(90deg, rgb(24, 182, 106), rgb(87, 255, 0));
+    background: -moz-linear-gradient(90deg, rgb(24, 182, 106), rgb(87, 255, 0));
+    background: linear-gradient(90deg, rgb(24, 182, 106), rgb(87, 255, 0));
+    color: white;
+    padding: 15px 35px;
+    border-radius: 40px;
+    line-height: normal;
+    font-weight: 600;
+}
+
+/*   СТИЛИ ДЛЯ БЛОКА СО СЛОГАНОММ   */
+
+.aboutUs-tagline {
+    color: #454545;
+    background: white;
+    overflow: hidden;
+    width: 86%;
+    height: 750px;
+    margin-top: 45px;
+    margin-left: 7%;
+    border-radius: 40px;
+    position: relative;
+}
+
+.aboutUs-tagline-trash {
+    width: 40%;
+    position: absolute;
+    bottom: 0;
+    left: 110px;
+}
+
+.aboutUs-tagline-waves {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.aboutUs-tagline__text {
+    position: absolute;
+    font-size: 2.5em;
+    font-family: "Open Sans";
+    font-weight: 600;
+    width: 40%;
+    right: 100px;
+    top: 100px;
+}
+
+.aboutUs-tagline__text span {
+    background: -webkit-linear-gradient(90deg, rgb(24, 182, 106), rgb(87, 255, 0));
+    background: -moz-linear-gradient(90deg, rgb(24, 182, 106), rgb(87, 255, 0));
+    background: linear-gradient(90deg, rgb(24, 182, 106), rgb(87, 255, 0));
+    border-radius: 40px;
+    color: white;
+    padding: 5px 20px;
+}
+
+/*   СТИЛИ ДЛЯ СЛАЙДЕРА   */
+
+.swiper {
+    width: 86%;
+    margin-left: 7%;
+}
