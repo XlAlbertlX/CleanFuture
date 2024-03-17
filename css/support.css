@@ -1,0 +1,106 @@
+.support-contacts {
+    width: 86%;
+    margin-left: 7%;
+    background: white;
+    border-radius: 40px;
+    margin-top: 60px;
+    position: relative;
+    padding: 200px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #454545;
+}
+.support-contacts__leafs, .support-contacts__waves {
+    z-index: 1;
+}
+.support-contacts__leafs {
+    position: absolute;
+    width: 28%;
+    left: 0;
+    top: 0;
+}
+.support-contacts__waves {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.support-contacts__email,.support-contacts__hot-line {
+    border: 5px rgb(24, 182, 106) solid;
+    border-radius: 40px;
+    width: fit-content;
+    padding: 8px 15px;
+    margin-bottom: 20px;
+    font-size: 2em;
+    cursor: pointer;
+    z-index: 10;
+}
+.support-contacts span {
+    color: #18B66A;
+}
+.support-contacts h2 {
+    z-index: 10;
+}
+.questions {
+    margin-top: 60px;
+    width: 86%;
+    margin-left: 7%;
+}
+.questions h2 {
+    text-align: center;
+}
+.questions__accordion {
+    width: 70%;
+    margin: 10px auto;
+}
+.questions__question {
+    position: relative;
+    background: -webkit-linear-gradient(90deg, rgb(24, 182, 106), rgb(87, 255, 0));
+    background: -moz-linear-gradient(90deg, rgb(24, 182, 106), rgb(87, 255, 0));
+    background: linear-gradient(90deg, rgb(24, 182, 106), rgb(87, 255, 0));
+    color: white;
+    padding: 10px 50px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 2em;
+    font-weight: 600;
+    z-index: 10;
+    margin-top: 10px;
+    cursor: pointer;
+
+}
+.questions__button {
+    transform: rotateZ(90deg);
+    cursor: pointer;
+    padding: 10px;
+    transition: 0.3s ease-in-out;
+}
+.questions__answer {
+    position: relative;
+    font-size: 1.1em;
+    width: 100%;
+    color: #454545;
+    background: white;
+    border-radius: 0 0 40px 40px;
+    z-index: 2;
+    transform: scaleY(0);
+    padding: 0 20px 20px;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s;
+}
+.questions__answer.visible {
+    margin-top: -40px;
+    padding-top: 60px;
+    opacity: 1;
+    max-height: 500px; /* Максимальная высота блока */
+    transform: scaleY(1);
+    overflow: visible;
+}
+.questions__button.visible {
+    transform: rotateZ(270deg);
+}

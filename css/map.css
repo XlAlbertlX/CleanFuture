@@ -1,0 +1,25 @@
+.map-wrapper {
+    width: 86%;
+    margin: auto;
+    border-radius: 40px;
+    overflow: hidden;
+    margin-top: 60px;
+    position: relative;
+}
+.map-contacts {
+    position: absolute;
+    background: -webkit-linear-gradient(45deg, rgb(24, 182, 106), rgb(87, 255, 0));
+    background: -moz-linear-gradient(45deg, rgb(24, 182, 106), rgb(87, 255, 0));
+    background: linear-gradient(45deg, rgb(24, 182, 106), rgb(87, 255, 0));
+    top: 50px;
+    right: 50px;
+    color: white;
+    padding: 50px 20px;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 350px;
+    width: 25%;
+    font-size: 1.25em;
+}

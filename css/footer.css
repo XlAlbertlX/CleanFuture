@@ -1,0 +1,32 @@
+footer {
+    width: 100%;
+    height: 650px;
+    padding: 18% 7% 0 7%;
+    background: url("../images/footer-background.png") no-repeat;
+    color: white;
+}
+.footer-wrapper {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    width: 100%;
+}
+.footer-copyright__logo {
+    display: flex;
+    align-items: center;
+}
+.footer-copyright__name {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-left: 20px;
+}
+.footer-copyright__secure {
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+.footer-navigation__title {
+    font-size: 2em;
+}
+.footer-navigation__item, .footer-offer {
+    font-size: 1.25em;
+}

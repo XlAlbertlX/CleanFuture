@@ -1,0 +1,25 @@
+.our-stats {
+    width: 86%;
+    margin-left: 7%;
+    text-align: center;
+    margin-top: 60px;
+}
+.our-stats__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: -webkit-linear-gradient(0deg, rgb(24, 182, 106), rgb(87, 255, 0));
+    background: -moz-linear-gradient(0deg, rgb(24, 182, 106), rgb(87, 255, 0));
+    background: linear-gradient(0deg, rgb(24, 182, 106), rgb(87, 255, 0));
+    border-radius: 40px;
+    padding: 2% 10%;
+    color: white;
+}
+.our-stats__num {
+    font-size: 6em;
+    font-weight: 700;
+
+}
+.our-stats-text {
+    font-size: 3em;
+}

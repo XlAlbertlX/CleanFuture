@@ -1,8 +1,10 @@
+// init Swiper:
 const swiper = new Swiper('.swiper', {
     // Optional parameters
     direction: 'horizontal',
+    speed: 800,
     loop: true,
     autoplay: {
-        delay: 5000,
+        delay: 6000,
     },
 });

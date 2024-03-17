@@ -4,14 +4,22 @@
     box-sizing: border-box;
 }
 
+
+
 body {
     background: #E6FDFF;
     font-family: "Open Sans";
+    width: 100%;
+    max-width: 1920px;
+
 }
 
 /*   СТИЛИ ДЛЯ ШАПКИ   */
 
 header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
     color: #454545;
     font-size: 1.875em;
     display: flex;
@@ -22,6 +30,9 @@ header {
     border-radius: 0 0 40px 40px;
     margin-left: 7%;
     padding: 15px 50px;
+    -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
 }
 
 header .logo {
@@ -145,10 +156,54 @@ a {
     color: white;
     padding: 5px 20px;
 }
-
-/*   СТИЛИ ДЛЯ СЛАЙДЕРА   */
-
-.swiper {
-    width: 86%;
-    margin-left: 7%;
+/*Стили заголовков*/
+h2 {
+    font-size: 3.4375em;
+    font-weight: 700;
+    background: #18B66A;
+    background: -webkit-linear-gradient(90deg, rgb(24, 182, 106), rgb(87, 255, 0));
+    background: -moz-linear-gradient(90deg, rgb(24, 182, 106), rgb(87, 255, 0));
+    background: linear-gradient(90deg, rgb(24, 182, 106), rgb(87, 255, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 60px;
+    cursor: context-menu;
 }
+/*   СКРОЛЛБАР   */
+/* Firefox (uncomment to work in Firefox, although other properties will not work!)  */
+/** {
+  scrollbar-width: thin;
+  scrollbar-color: #18B66A #FFFFFF;
+}*/
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+    height: 13px;
+    width: 13px;
+}
+*::-webkit-scrollbar-track {
+    border-radius: 9px;
+    background-color: #FFFFFF;
+}
+
+*::-webkit-scrollbar-track:hover {
+    background-color: #FFFFFF;
+}
+
+*::-webkit-scrollbar-track:active {
+    background-color: #FFFFFF;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 7px;
+    background-color: #18B66A;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: #1CD57C;
+}
+
+*::-webkit-scrollbar-thumb:active {
+    background-color: #18B66A;
+}
+
