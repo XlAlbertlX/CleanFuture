@@ -1,0 +1,124 @@
+#reg {
+    position: relative;
+    width: 31.875%;
+    box-sizing: border-box;
+    padding: 0 100px 40px;
+    color: white;
+    margin: auto;
+    margin-top: 90px;
+    background-color: #18B66A;
+    border-radius: 0 0 40px 40px;
+}
+#reg img {
+    position: absolute;
+    top: -70px;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+}
+#reg h1 {
+    text-align: center;
+    font-size: 3em !important;
+    font-family: "Open Sans";
+    font-weight: 700;
+}
+#reg label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+.registration-wrapper {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 60%;
+}
+#reg .registration-row {
+    width: 100%;
+    margin-top: 10px;
+}
+.registration-row input {
+    width: 100%;
+    padding: 18px;
+    border-radius: 15px;
+    border: none;
+    font-size: 1em;
+}
+.registration-row input:focus {
+    outline: none;
+}
+#reg #formButton {
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 40px;
+    border: none;
+    background: #57FF00;
+    color: white;
+    font-size: 1.5em;
+    font-weight: 600;
+    cursor: pointer;
+}
+.btn {
+    padding: 20px;
+    font-size: 1.3em;
+    font-weight: 400;
+    cursor: pointer;
+
+}
+#reg #formButton:hover {
+    background: #4ed50a;
+}
+.error-wrapper {
+    margin-top: 20px;
+    color: red;
+    font-size: 1.2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.error_link {
+    text-align: center;
+    color: white;
+    background: #57FF00;
+    border-radius: 40px;
+    line-height: 2.5;
+    margin-top: 10px;
+}
+.error_link:hover {
+    background: #4ed50a;
+}
+.search_select_box {
+    width: 100%;
+    /* max-width: 300px; */
+}
+.search_select_box {
+    width: 100% !important;
+}
+.dropdown.bootstrap-select {
+    width: 100% !important;
+}
+.search_select_box button {
+    background-color: white !important;
+    color: #454545 !important;
+    border-radius: 15px !important;
+   
+}
+.dropdown-menu.inner {
+    width: 100% !important;
+}
+.dropdown-menu ul {
+    width: 300px !important;
+    min-width: 300px !important;
+}
+.filter-option-inner-inner {
+    font-family: "Open sans";
+    font-size: 0.8em !important;
+    color: #636363 !important;
+}
+.dropdown-item.active.selected {
+    background-color: #18B66A !important;
+}

@@ -1,0 +1,65 @@
+<head>
+    <link rel="stylesheet" href="../css/new-photo.css">
+</head>
+<div  class="popup__photo" id="popup_photo">
+    <div class="new-photo__wrapper">
+        <div class="new-photo__header">
+            <div class="new-photo__title">Загрузка новой фотографии</div>
+            <div class="new-photo__close" id="new-photo__close">&#10006;</div>
+        </div>
+        <div class="new-photo__body">
+            <div class="new-photo__text">Загрузите фотографию, чтобы украсить ею свой профиль! Вы можете загрузить изображение в формате JPEG, JPG, PNG, GIF, TIFF, WEBP.</div>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <div class="input__wrapper">
+                    <input name="avatar" type="file" id="input__file" class="input input__file">
+                    <label for="input__file" class="input__file-button">
+                       <!-- <span class="input__file-icon-wrapper"><img class="input__file-icon" src="../images/free-icon-download-arrow-62055.png" alt="Выбрать файл" width="25"></span> -->
+                       <span class="input__file-button-text">Выберите файл</span>
+                    </label>
+                 </div>
+                 <input type="submit" value="Подтвердить изменения" id="uploadFile">
+              </form>
+        </div>
+        <div class="new-photo__footer">
+            Если у вас возникают проблемы с загрузкой, попробуйте выбрать фотографию меньшего размера
+        </div>
+    </div>
+</div>
+
+<script>
+    let inputs = document.querySelectorAll('.input__file');
+    Array.prototype.forEach.call(inputs, function (input) {
+      let label = input.nextElementSibling,
+        labelVal = label.querySelector('.input__file-button-text').innerText;
+  
+      input.addEventListener('change', function (e) {
+        let countFiles = '';
+        if (this.files && this.files.length >= 1)
+          countFiles = this.files.length;
+  
+        if (countFiles)
+          label.querySelector('.input__file-button-text').innerText = 'Выбрано файлов: ' + countFiles;
+        else
+          label.querySelector('.input__file-button-text').innerText = labelVal;
+      });
+    });
+</script>
+
+<script>
+    let close = document.getElementById('new-photo__close');
+    close.addEventListener('click', () => {
+        let popup = document.getElementById('popup__photo__main-wrap');
+        popup.style.display = "none"
+    })
+
+    const fileInput = document.querySelector('input[name="avatar"]');
+    const fileInputSubmit = document.getElementById('uploadFile');
+
+    fileInput.addEventListener('change', function() {
+        if (fileInput.files.length > 0) {
+            fileInputSubmit.style.display = "block";
+        } else {
+            fileInputSubmit.style.display = "none";
+        }
+    });
+</script>

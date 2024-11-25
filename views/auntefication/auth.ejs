@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang=ru>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CleanFuture - авторизация</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/fonts/merriweathersans/merriweathersans.css">
+    <link rel="stylesheet" href="/fonts/pt-sans/PT-Sans_Bold.css">
+    <link rel="stylesheet" href="/fonts/pt-sans/PT-Sans_Regular.css">
+    <link rel="stylesheet" href="/fonts/opensans/opensans.css">
+    <link rel="stylesheet" href="/css/form-registration.css">
+</head>
+<body>
+<%- include('../blocks/header') -%>
+<form action="auth" method="post" id="reg">
+    <h1>Авторизация</h1>
+    <div class="registration-wrapper">
+        <div class="registration-row">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="Введите свой e-mail" required >
+        </div>
+        <div class="registration-row">
+            <label for="pass">Пароль</label>
+            <input type="password" id="pass" name="pass" placeholder="Введите пароль" required >
+        </div>
+        <% if (error) { %>
+            <div class="error-wrapper">
+                <div id="error"><%= error %></div>
+                <a class="error_link" href="/registration"><b><%= error_link %></b></a>
+            </div>
+            
+        <% } %>
+        <button id="formButton">Войти в профиль</button>
+        <img src="/images/registration-form-head.png" alt="" draggable="false">
+    </div>
+</form>
+
+<%- include('../blocks/footer') -%>
+
+</body>
+</html>

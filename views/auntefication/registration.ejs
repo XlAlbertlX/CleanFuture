@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang=ru>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CleanFuture - регистрация</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/fonts/merriweathersans/merriweathersans.css">
+    <link rel="stylesheet" href="/fonts/pt-sans/PT-Sans_Bold.css">
+    <link rel="stylesheet" href="/fonts/pt-sans/PT-Sans_Regular.css">
+    <link rel="stylesheet" href="/fonts/opensans/opensans.css">
+    <link rel="stylesheet" href="/css/form-registration.css">
+
+</head>
+<body>
+<%- include('../blocks/header') -%>
+<form action="/registration" method="POST" id="reg">
+    <h1>Регистрация</h1>
+    <div class="registration-wrapper">
+        <div class="registration-row">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="Введите свой e-mail" required >
+        </div>
+        <div class="registration-row">
+            <label for="name">Имя</label>
+            <input type="text" id="name" name="name" placeholder="Введите свое имя" required >
+        </div>
+        <div class="registration-row">
+            <label for="last_name">Фамилия</label>
+            <input type="text" id="last_name" name="last_name" placeholder="Введите свою фамилию" required >
+        </div>
+        <div class="search_select_box registration-row" id="select">
+            <label>Выбрать город</label>
+        </div>
+        <div class="registration-row">
+            <label for="pass">Пароль</label>
+            <input type="password" id="pass" name="pass" placeholder="Введите пароль" required >
+        </div>
+        <div class="registration-row">
+            <label for="double-pass">Подтвердите пароль</label>
+            <input type="password" id="double-pass" name="repass" placeholder="Введите пароль еще раз" required >
+        </div>
+        <% if (error) { %>
+            <div class="error-wrapper">
+                <div id="error"><%= error %></div>
+                <a class="error_link" href="/auth"><b><%= error_link %></b></a>
+            </div>
+            
+        <% } %>
+        <button id="formButton">Зарегистрироваться</button>
+        <img src="/images/registration-form-head.png" alt="" draggable="false">
+    </div>
+</form>
+
+<%- include('../blocks/footer') -%>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+<script src="/scripts/bootstrap-select.min.js"></script>
+<script>
+fetch('/words').then(response => response.json()).then(data => {
+    let arr = data.words;
+    let select = document.createElement('select');
+    select.size = 10; // Установка размера выпадающего списка
+    select.setAttribute('data-live-search', 'true');
+    select.setAttribute('require', '');
+    select.name = "city";
+    
+
+    arr.forEach(function(item, i, arr) {
+        let option = document.createElement('option'); // Создание элемента <option>
+        option.value = item; // Установка значения для элемента <option>
+        option.text = item; // Установка текста для элемента <option>
+        select.appendChild(option); // Добавление элемента <option> в элемент <select>
+    });
+
+    document.querySelector('#select').appendChild(select); // Добавление элемента <select> в DOM
+
+    $('.search_select_box select').selectpicker(); // Вызов метода selectpicker после добавления элемента <select> в DOM
+}).catch(error => console.error('Ошибка получения данных:', error));
+</script>
+
+</body>
+
+</html>

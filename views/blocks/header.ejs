@@ -1,0 +1,26 @@
+<header>
+    <a href="/">
+        <div class="logo">
+            <img src="images/logo.png" alt="CleanFuture-logo" draggable="false">
+            CLEAN<span>FUTURE</span>
+        </div>
+    </a>
+    <div class="header-buttons">
+        <div class="header-buttons__item"><a href="/">О нас</a></div>
+        <div class="header-buttons__item"><a href="/support">Тех. Поддержка</a></div>
+        <div class="header-buttons__item"><a href="/contacts">Контакты</a></div>
+        <div class="header-buttons__item"><a href="/profile">Профиль</a></div>
+    </div>
+    <div class="header__dispose">
+        <a href="/sort_waste">Сдать мусор</a>
+    </div>
+</header>
+<script>
+    fetch('/header').then(res => res.json()).then(data => {
+            if (data.isAuthenticated) {
+                document.querySelector('.header__dispose').style.display = 'block';
+            } else {
+                document.querySelector('.header__dispose').style.display = 'none';
+            }
+        }).catch(err => console.log('Error: ' + err.message));
+</script>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>CleanFuture - Тех. Поддержка</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/fonts/pt-sans/PT-Sans_Bold.css">
+    <link rel="stylesheet" href="/fonts/pt-sans/PT-Sans_Regular.css">
+    <link rel="stylesheet" href="/fonts/opensans/opensans.css">
+    <link rel="stylesheet" href="/css/support.css">
+</head>
+<body>
+
+<%- include('blocks/header') -%>
+
+<div class="support-contacts">
+    <h2>Возникли вопросы? Напишите нам!</h2>
+    <div class="support-contacts__email">Наш E-mail: <span>cleanfuture-support@mail.ru</span></div>
+    <div class="support-contacts__hot-line">Горячая линия: <span>+7 800 777 7080</span></div>
+    <img class="support-contacts__leafs" src="/images/leafs2.png" alt="здесь должна быть листва" draggable="false">
+    <img class="support-contacts__waves" src="/images/waves1.png" alt="здесь должны быть волны" draggable="false">
+</div>
+
+<div class="questions">
+    <h2>Ответы на часто задаваемые вопросы</h2>
+<!--    БЛОК СО ВСЕМИ АККОРДЕОНАМИ-->
+    <div class="questions__accordions">
+<!--        ОТДЕЛЬНЫЙ АККОРДЕОН-->
+        <div class="questions__accordion">
+            <div class="questions__question">
+                <div class="questions__title">Какое я получу вознаграждение?</div>
+                <div class="questions__button">❯</div>
+            </div>
+            <div class="questions__answer">Вы можете получить 2 типа вознаграждения:<br>1) Денежный перевод за каждый килограмм мусора. Наша система автоматически посчитает вес сданного вами мусора и сумму денег.
+                <br>2) Акция в компании-партнере. При сдаче мусора выберите соответствующий пункт и выберите предложенную акцию. Бонус будет отправлен в ваш профиль!
+            </div>
+        </div>
+<!--        ОТДЕЛЬНЫЙ АККОРДЕОН-->
+        <div class="questions__accordion">
+            <div class="questions__question">
+                <div class="questions__title">Где лежат накопленные деньги?</div>
+                <div class="questions__button">❯</div>
+            </div>
+            <div class="questions__answer">Все денежные средства находятся на вашем балансе в личном кабинете. Оттуда вы можете сделать перевод денег в другой банк или же оплатить ими покупку.
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<%- include('blocks/footer') -%>
+
+</body>
+<script src="/scripts/accordions.js"></script>
+</html>

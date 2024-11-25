@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>CleanFuture - Ваш профиль</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/fonts/pt-sans/PT-Sans_Bold.css">
+  <link rel="stylesheet" href="/fonts/pt-sans/PT-Sans_Regular.css">
+  <link rel="stylesheet" href="/fonts/opensans/opensans.css">
+  <link rel="stylesheet" href="/css/profile.css">
+</head>
+<body>
+<%- include('blocks/header') -%>
+
+<!--ИНФОРМАЦИЯ О ПОЛЬЗОВАТЕЛЕ-->
+<div class="about-me__wrapper">
+  <div class="about-me-photo">
+    <img src="/images/profile-photo.jpg" alt="фото профиля" id="profileAvatar" draggable="false">
+    <div class="about-me-photo__edit-photo" id="about-me-photo__edit-photo">Изменить фотографию</div>
+  </div>
+
+  <div class="about-me__general-information">
+    <div class="about-me-data">
+      <div class="about-me-data__wrapper">
+        <div class="about-me-data__right-side">
+          <div class="about-me-data__title"><b>Имя:</b></div>
+          <div class="about-me-data__title"><b>Фамилия:</b></div>
+          <div class="about-me-data__title"><b>Email:</b></div>
+          <div class="about-me-data__title"><b>Город:</b></div>
+          <div class="about-me-data__title"><b>Мусора сдано:</b></div>
+        </div>
+        <div class="about-me-data__left-side">
+          <div class="about-me-data__value"><%= data.username %></div>
+          <div class="about-me-data__value"><%= data.last_name %></div>
+          <div class="about-me-data__value"><%= data.email%></div>
+          <div class="about-me-data__value"><%= data.city %></div>
+          <div class="about-me-data__value"><%= data.trash_count %> кг</div>
+        </div>
+      </div>
+      <button>Редактировать профиль</button>
+      <button>Мои купоны в магазинах</button>
+    </div>
+    <div class="about-me__qr-wrapper">
+      <div class="about-me__qr">
+        <img src="/images/qr.png" alt="Ваш qr-код для автоматов CleanFuture" draggable="false">
+      </div>
+      <div class="about-me__qr-title">Ваш qr-код для автоматов CleanFuture</div>
+    </div>
+  </div>
+
+  <div class="about-me-finance">
+    <div class="about-me-finance__title"><b>Финансы</b></div>
+    <div class="about-me-finance__balance">
+      <img class="about-me-finance__ico" src="/images/currency.png" draggable="false">
+      <div class="about-me-finance__value"><b><%= data.balance %></b></div>
+    </div>
+    <button class="about-me-finance__dep">Пополнить</button>
+    <button class="about-me-finance__withdraw">Вывести</button>
+  </div>
+</div>
+
+<!--ВВОД ПРОМОКОДОВ И ВЫБОР РЕКЛАМНЫХ ПРЕДЛОЖЕНИЙ-->
+<div class="profile-promo">
+  <form class="profile-promocode-input" method="post">
+    <div class="profile-promocode-input__title"><b>Используйте промокод</b></div>
+    <input type="text" name="promocode" placeholder="Введите промокод или сертификат">
+    <input type="submit" value="Применить">
+  </form>
+  <div class="promotion-wrapper">
+    <img class="promotion__circles" src="/images/circles.png" alt="Кружочек" draggable="false">
+    <div class="promotion-additional-wrapper">
+      <div class="promotion-title"><b>Участвуйте в акциях компаний, чтобы сдавать мусор с большей выгодой!</b></div>
+      <img class="promotion__clean-city" src="/images/clean-city.png" alt="Чистый город" draggable="false">
+      <img class="promotion__waves" src="/images/waves2.png" alt="волны:D" draggable="false">
+    </div>
+
+  </div>
+</div>
+
+<div class="popup__photo__main-wrap" id="popup__photo__main-wrap">
+  <%- include('blocks/load_new_photo') -%>
+</div>
+
+<%- include('blocks/footer') -%>
+<script>
+const profileData = <%- JSON.stringify(data) %>;
+    let avatarURL = profileData.avatar;
+   
+    let image = document.getElementById('profileAvatar');
+    image.src = avatarURL.slice(6);
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  let edit_photo = document.getElementById('about-me-photo__edit-photo');
+  let popup_photo = document.getElementById('popup__photo__main-wrap');
+  edit_photo.addEventListener('click', () => {
+    popup_photo.style.display = "block";
+  });
+});
+</script>
+
+</body>
+</html>

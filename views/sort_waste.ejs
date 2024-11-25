@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>CleanFuture - Ваш профиль</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/fonts/pt-sans/PT-Sans_Bold.css">
+    <link rel="stylesheet" href="/fonts/pt-sans/PT-Sans_Regular.css">
+    <link rel="stylesheet" href="/fonts/opensans/opensans.css">
+    <link rel="stylesheet" href="/css/sort_waste.css">
+</head>
+<body>
+<%- include('blocks/header') -%>
+
+<form class="sort-waste__wrapper" id="sort-waste" action="/sort_waste_submit" method="post">
+    <div class="sort_waste__select-type">
+        <h3>Заполните форму для сдачи мусора!</h3>
+        <div class="sort_waste__selects">
+            <div class="sort_waste__select-row">
+                <label for="trash_type">Тип мусора:</label>
+                <select name="trash_type" id="trash_type">
+                    <option value="" disabled selected>Не выбрано</option>
+                    <option value="Бумага">Бумага</option>
+                    <option value="Пластик">Пластик</option>
+                    <option value="Стекло">Стекло</option>
+                    <option value="Железо">Железо</option>
+                    <option value="Батарейки">Батарейки</option>
+                </select>
+            </div>
+            <div class="sort_waste__select-row">
+                <label for="trash_weight">Вес сдаваемого мусора (кг):</label>
+                <input type="number" name="trash_weight" min="0" max="100" id="trash_weight">
+            </div>
+        </div>
+    </div>
+
+    <div class="award-type__wrapper">
+        <h3>Выберите вид вознаграждения!</h3>
+
+        <div class="award-type__radio-wrapper">
+            <div class="award-type__radio-row">
+                <input type="radio" name="award_type" id="dep_balance" value="dep_balance" checked>
+                <label for="dep_balance">Пополнение баланса</label>
+            </div>
+            <div class="award-type__radio-row">
+                <input type="radio" name="award_type" id="companys_discount" value="companys_discount">
+                <label for="companys_discount">Участвовать в акции компании</label>
+            </div>
+           
+            
+        </div>
+    </div>
+
+    <div class="action-submit__wrapper">
+        <h3>Ваш баланс</h3>
+        <div class="action-submit__balance">
+            <img class="action-submit__ico" src="/images/currency.png">
+            <div class="action-submit__value"><b><%= balance %></b></div>
+        </div>
+        <h3 class="action-submit__title2">Сумма пополнения</h3>
+        <div class="action-submit__balance">
+            <img class="action-submit__ico" src="/images/currency.png">
+            <div class="action-submit__value"><b><input type="text" id="sum_value" name="sum_value" value="0" readonly></b></div>
+        </div>
+        <input class="action-submit__button" type="submit" value="Сдать мусор!">
+    </div>
+</form>
+
+<%- include('blocks/footer') -%>
+
+<script>
+    let form = document.getElementById('sort-waste');
+    form.addEventListener('change', () => {
+        const trash_type = document.getElementById('trash_type').value;
+        const trash_weight = document.getElementById('trash_weight').value;
+        const sum_output = document.getElementById('sum_value')
+        let sum;
+        
+        switch (trash_type) {
+            case "Бумага":
+                sum = trash_weight * 8;
+                break;
+            case "Пластик":
+                sum = trash_weight * 10;
+                break;
+            case "Стекло":
+                sum = trash_weight * 3;
+                break;
+            case "Железо":
+                sum = trash_weight * 17;
+                break;
+            case "Батарейки":
+                sum = trash_weight * 30;
+                break;
+        }
+        if (!sum) {
+            sum_output.value = 0;
+        } else {
+            sum_output.value = sum;
+        }       
+    })
+    
+    
+</script>
+</body>
+</html>
